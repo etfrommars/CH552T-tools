@@ -1,0 +1,6 @@
+{
+  "name": "CH552T 多功能USB适配器综合上位机",
+  "description": "基于CH552T单片机的6合1多功能USB适配器（I2C/SPI/RS485/1-Wire/GPIO/PWM与ADC）硬件设计、交互式原理图、Web Serial上位机调试工作台与固件下载平台",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
