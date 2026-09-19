@@ -1,6 +1,7 @@
 import React from 'react';
 import { 
-  Usb, 
+  ToolCase, 
+  Usb,
   Cpu, 
   Layers, 
   Network, 
@@ -56,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Brand */}
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 via-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-900/30 border border-cyan-400/30">
-            <Usb className="w-6 h-6 text-white" />
+            <ToolCase className="w-6 h-6 text-white" />
           </div>
           <div>
             <div className="flex items-center gap-2">

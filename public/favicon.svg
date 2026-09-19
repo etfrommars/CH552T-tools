@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0.8" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <!-- Background container -->
+  <rect width="32" height="32" rx="7" fill="url(#boxGrad)" />
+  
+  <!-- Toolbox graphic -->
+  <g transform="translate(4, 4)" filter="url(#shadow)">
+    <!-- Handle -->
+    <path d="M8.5 7V4.5C8.5 3.67 9.17 3 10 3H14C14.83 3 15.5 3.67 15.5 4.5V7" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Toolbox Main Body -->
+    <rect x="2.5" y="7" width="19" height="13" rx="2" fill="#0f172a" fill-opacity="0.25" stroke="#ffffff" stroke-width="1.8" stroke-linejoin="round" />
+    <!-- Toolbox Top Lid division -->
+    <line x1="2.5" y1="10.5" x2="21.5" y2="10.5" stroke="#ffffff" stroke-width="1.5" />
+    <!-- Toolbox latches -->
+    <rect x="6" y="9.5" width="2.5" height="3" rx="0.5" fill="#f8fafc" />
+    <rect x="15.5" y="9.5" width="2.5" height="3" rx="0.5" fill="#f8fafc" />
+    <!-- Front Tray Handle / Center Accent -->
+    <line x1="10" y1="15" x2="14" y2="15" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" />
+  </g>
+</svg>
