@@ -180,12 +180,14 @@ export const HardwareDocView: React.FC = () => {
               <text x="260" y="145" fill="#94a3b8" fontSize="8" textAnchor="middle">Internal 24MHz USB Device</text>
 
               {/* MCU Ports inside */}
-              <text x="180" y="170" fill="#cbd5e1" fontSize="9">P1.0: SCL / SCK / PWM1</text>
-              <text x="180" y="185" fill="#cbd5e1" fontSize="9">P1.1: SDA / MOSI / IO1</text>
-              <text x="180" y="200" fill="#cbd5e1" fontSize="9">P1.2: MISO / IO2</text>
-              <text x="180" y="215" fill="#cbd5e1" fontSize="9">P1.3: CS / NSS / IO3</text>
-              <text x="180" y="230" fill="#cbd5e1" fontSize="9">P1.4: DQ / AIN0 / IO4</text>
-              <text x="180" y="245" fill="#cbd5e1" fontSize="9">P3.0/P3.1: 485 RXD/TXD</text>
+              <text x="180" y="165" fill="#c084fc" fontSize="8.5" fontWeight="bold">P3.0/P3.1: 485 RXD/TXD</text>
+              <text x="180" y="178" fill="#c084fc" fontSize="8.5">P3.4: 485 DE/~RE 流控</text>
+              <line x1="180" y1="185" x2="340" y2="185" stroke="#334155" strokeWidth="0.5" strokeDasharray="2,2" />
+              <text x="180" y="198" fill="#38bdf8" fontSize="8.5">P1.0: SCL / SCK / PWM1</text>
+              <text x="180" y="211" fill="#38bdf8" fontSize="8.5">P1.1: SDA / MOSI / IO1</text>
+              <text x="180" y="224" fill="#38bdf8" fontSize="8.5">P1.2: MISO / IO2</text>
+              <text x="180" y="237" fill="#38bdf8" fontSize="8.5">P1.3: CS / NSS / IO3</text>
+              <text x="180" y="250" fill="#38bdf8" fontSize="8.5">P1.4: DQ / AIN0 / IO4</text>
 
               {/* SP3485 RS485 Transceiver Block */}
               <rect x="390" y="40" width="120" height="75" rx="4" fill="#0f172a" stroke="#a855f7" strokeWidth="1.5" />
@@ -215,10 +217,21 @@ export const HardwareDocView: React.FC = () => {
               <text x="465" y="235" fill="#cbd5e1" fontSize="8">9: AIN2 (P1.6)</text>
               <text x="465" y="250" fill="#cbd5e1" fontSize="8">10: AIN3 (P1.7)</text>
 
-              {/* Connecting signal lines */}
+              {/* Connecting signal lines (Orthogonal routing without any intersection) */}
               <path d="M 120 75 L 170 75 L 170 120" fill="none" stroke="#38bdf8" strokeWidth="1" strokeDasharray="3,3" />
-              <path d="M 350 170 L 390 170" fill="none" stroke="#f59e0b" strokeWidth="1.5" />
-              <path d="M 350 215 L 390 90" fill="none" stroke="#c084fc" strokeWidth="1" />
+              
+              {/* U1 to U2 (SP3485) signal line - routes upward cleanly at y=165 -> y=80 */}
+              <path d="M 350 165 L 368 165 L 368 80 L 390 80" fill="none" stroke="#c084fc" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="350" cy="165" r="2" fill="#c084fc" />
+              <circle cx="390" cy="80" r="2" fill="#c084fc" />
+              <text x="372" y="125" fill="#c084fc" fontSize="7" fontWeight="bold">RS485</text>
+
+              {/* U1 to J1 (10P Header) multi-bus line - routes directly horizontal at y=220 */}
+              <path d="M 350 220 L 390 220" fill="none" stroke="#06b6d4" strokeWidth="1.5" strokeLinecap="round" />
+              <circle cx="350" cy="220" r="2" fill="#06b6d4" />
+              <circle cx="390" cy="220" r="2" fill="#06b6d4" />
+              <text x="358" y="214" fill="#22d3ee" fontSize="7" fontWeight="bold">P1总线</text>
+
               <path d="M 120 225 L 170 225" fill="none" stroke="#f87171" strokeWidth="1" />
 
               <text x="270" y="315" fill="#64748b" fontSize="9" textAnchor="middle">
