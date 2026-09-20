@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { Github, ExternalLink } from 'lucide-react';
 import { Header } from './components/Header';
 import { LogTerminal } from './components/LogTerminal';
 import { I2CView } from './components/views/I2CView';
@@ -93,6 +94,29 @@ export default function App() {
 
       {/* Bottom Protocol Transaction Log Console */}
       <LogTerminal />
+
+      {/* Global App Footer */}
+      <footer className="border-t border-slate-900 bg-slate-950/90 text-slate-400 py-3 px-4 sm:px-6 text-xs">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+          <div className="flex items-center gap-2 text-[11px]">
+            <span className="text-slate-300 font-medium">CH552T 多功能USB适配器</span>
+            <span className="text-slate-700">|</span>
+            <span className="text-slate-400">Web Serial 硬件综合调试上位机 (6-in-1 Suite)</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://github.com/etfrommars/CH552T-tools"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-slate-300 hover:text-cyan-400 transition-colors text-[11px] group"
+            >
+              <Github className="w-3.5 h-3.5 text-slate-400 group-hover:text-cyan-400 transition-colors" />
+              <span className="font-mono">github.com/etfrommars/CH552T-tools</span>
+              <ExternalLink className="w-3 h-3 text-slate-500 group-hover:text-cyan-400 transition-colors" />
+            </a>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

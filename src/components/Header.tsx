@@ -12,7 +12,9 @@ import {
   CircuitBoard, 
   Sparkles,
   RefreshCw,
-  TerminalSquare
+  TerminalSquare,
+  Github,
+  ExternalLink
 } from 'lucide-react';
 import { AdapterMode, SerialConnectionStatus } from '../types';
 import { DipSwitchControl } from './DipSwitchControl';
@@ -131,6 +133,19 @@ export const Header: React.FC<HeaderProps> = ({
               ))}
             </select>
           </div>
+
+          {/* GitHub Repository Link */}
+          <a
+            href="https://github.com/etfrommars/CH552T-tools"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-950 hover:bg-slate-800 text-slate-300 hover:text-white rounded-lg border border-slate-800 transition-all text-xs font-medium"
+            title="查看开源 GitHub 仓库: etfrommars/CH552T-tools"
+          >
+            <Github className="w-4 h-4 text-slate-200" />
+            <span className="hidden sm:inline">GitHub</span>
+            <ExternalLink className="w-3 h-3 text-slate-500" />
+          </a>
         </div>
       </div>
 

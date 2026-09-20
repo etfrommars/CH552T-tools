@@ -8,7 +8,9 @@ import {
   Info, 
   Layers2, 
   Sliders, 
-  Table 
+  Table,
+  Github,
+  ExternalLink
 } from 'lucide-react';
 import { CH552T_PINS, BOM_LIST, MODES_LIST } from '../../data/hardwareData';
 import { AdapterMode } from '../../types';
@@ -47,20 +49,34 @@ export const HardwareDocView: React.FC = () => {
           </div>
         </div>
 
-        {/* Mode Selector for Pinout Highlighting */}
-        <div className="flex items-center gap-2 bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5">
-          <span className="text-xs text-slate-400">引脚高亮模式:</span>
-          <select
-            value={selectedHighlightMode}
-            onChange={(e) => setSelectedHighlightMode(e.target.value as AdapterMode)}
-            className="bg-transparent text-xs font-semibold text-amber-400 focus:outline-none"
+        {/* Actions & Mode Selector */}
+        <div className="flex flex-wrap items-center gap-2.5">
+          <a
+            href="https://github.com/etfrommars/CH552T-tools"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-950 hover:bg-slate-800 text-slate-300 hover:text-white rounded-lg border border-slate-800 transition-all text-xs font-medium"
           >
-            {MODES_LIST.map((m) => (
-              <option key={m.id} value={m.id} className="bg-slate-900 text-slate-200">
-                {m.name} ({m.dipCode})
-              </option>
-            ))}
-          </select>
+            <Github className="w-3.5 h-3.5 text-amber-400" />
+            <span>GitHub 硬件原理图工程</span>
+            <ExternalLink className="w-3 h-3 text-slate-500" />
+          </a>
+
+          {/* Mode Selector for Pinout Highlighting */}
+          <div className="flex items-center gap-2 bg-slate-950 border border-slate-800 rounded-lg px-3 py-1.5">
+            <span className="text-xs text-slate-400">引脚高亮模式:</span>
+            <select
+              value={selectedHighlightMode}
+              onChange={(e) => setSelectedHighlightMode(e.target.value as AdapterMode)}
+              className="bg-transparent text-xs font-semibold text-amber-400 focus:outline-none"
+            >
+              {MODES_LIST.map((m) => (
+                <option key={m.id} value={m.id} className="bg-slate-900 text-slate-200">
+                  {m.name} ({m.dipCode})
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
 
